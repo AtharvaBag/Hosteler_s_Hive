@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Add a black background color to the top navigation */
+    .topnav {
+      border-collapse: collapse;
+      background-color: transparent;
+      overflow: hidden;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: orangered;
+      color: white;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #333;
+      color: white;
+    }
+
+    .topnav a.active:hover {
+      background-color: red;
+      color: #333;
+    }
+
+    .topnav-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+      color: black;
+      text-align: left;
+      padding: 10px;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+       /*background-image: url('https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/original/12.jpg?3');*/
+        background-image: url('https://static.vecteezy.com/system/resources/previews/022/737/904/original/modern-city-scape-silhouette-simple-minimalist-blue-city-skyline-background-urban-cityscape-silhouettes-illustration-vector.jpg');
+     background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 40px;
+      font-family: sans-serif;
+      margin-top: 10px;
+    }
+
+    .SearchBar {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      margin-left: 1px;
+      margin-right: 30px;
+    }
+
+    .SearchBar input::placeholder
+    {
+        color: #333;
+    }
+    .SearchBar input[type="text"] {
+      padding: 6px 12px;
+      margin-right: 2px;
+      font-size: 17px;
+      border: 2px solid #333;
+      border-radius: 20px;
+      background-color: transparent;
+      text-align: center;
+    }
+
+    .SearchBar input[type="Submit"] {
+      padding: 6px 12px;
+      font-size: 17px;
+      border: 2px solid red;
+      border-radius: 20px;
+      background-color: transparent;
+      color: red;
+      cursor: pointer;
+      float: right;
+    }
+
+    .SearchBar input[type="Submit"]:hover {
+      color: #333;
+      border: 2px solid #333;
+    }
+
+    
+    .checkbox-label{
+        margin-left: 90px;
+    }
+    
+     
+    .inputtable {
+      margin-left: auto;
+      margin-right: auto;
+      background: black;
+      opacity: 0.8; 
+      background-size: 100%;
+      width: 70%;
+      border-radius: 25px;
+    }
+
+    .inputtable td {
+      padding: 10px;
+      font-size: 20px;
+      font-family: sans-serif;
+      text-align: center;
+      vertical-align: middle;
+      align-items: center;
+    }
+
+    .inputtable td.left-align {
+      text-align: left;
+    }
+
+    .inputtable td.top-align {
+      vertical-align: top;
+    }
+
+    .inputtable input{
+      padding: 6px 43px;
+      border-radius: 20px;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      text-align: center;
+    }
+    
+    .inputtable input:hover,
+     .inputtable select:hover
+    {
+        border: 2px solid red;
+    }
+    
+
+    .inputtable select {
+      padding: 6px 43px;
+      font-size: 15px;
+      border: 1px solid white;
+      border-radius: 20px;
+      background-color: transparent;
+      text-align: left;
+      margin-left: 10px;
+    }
+
+    .inputtable option {
+      padding: 10px;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .inputtable input[type=submit] {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 6px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .inputtable input[type=reset] {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 6px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    
+    
+     input[type=submit]:hover,
+    input[type=reset]:hover{
+        color: orangered;
+        border: 2px solid orangered;
+    }
+   
+
+    /* Hide the default radio button */
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="checkbox"]
+    {
+        display: none;
+    }
+
+    /* Create a custom radio button */
+    .custom-radio {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid white;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Style the checked state */
+    input[type="radio"]:checked+.custom-radio {
+      background-color: red;
+      /* Checked background color */
+    }
+
+    /* Create the dot for the checked state */
+    .custom-radio::after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease;
+    }
+
+    /* Show the dot when checked */
+    input[type="radio"]:checked+.custom-radio::after {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: white;
+      /* Color of the dot */
+    }
+
+    .radio-label {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    /* Create a custom checkbox */
+    .custom-checkbox {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      /* Unchecked background color */
+      border-radius: 3px;
+      border: 1px solid white;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .midcolumn{
+        margin-left: 50px;
+    }
+       
+    /* Style the checked state */
+    input[type="checkbox"]:checked+.custom-checkbox {
+      background-color: red;
+      border: black;
+      /* Checked background color */
+    }
+
+    /* Create the checkmark for the checked state */
+    .custom-checkbox::after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      position: absolute;
+      top: 25%;
+      left: 60%;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+      transition: transform 0.5s ease;
+    }
+
+    /* Show the checkmark when checked */
+    input[type="checkbox"]:checked+.custom-checkbox::after {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    .radio-label,
+    .checkbox-label {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+      /* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 15px; /* Width of the entire scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: darkgray; /* Color of the scroll thumb */
+    width: 18px;
+    
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: gray; /* Color of the scroll thumb */
+    width: 18px;
+    
+    border-radius: 20px;
+}
+
+    
+ /* Up arrow button */
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url("images/up-arrow.png");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+/* Down arrow button */
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url("images/down-arrow.png");
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  </style>
+    <title>Hosteler's Hive | Home</title>
+        <link rel="icon" type="image/png" href="images/Hosteler's Hive Logo.png">
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="home.html">Home</a>
+    <a href="admin_login.html">Admin Login</a>
+
+    <div class="SearchBar">
+      <form action="Home_Page_Pincode_Checker" method="post">
+        <input type="text" pattern="[0-9]{6}" name="searchbarinputhostelpin" id="searchbarinputhostelpin" style="color: #333;" placeholder="Enter pin code of your area" required="required">
+        <input type="Submit" value="Search">
+      </form>
+    </div>
+
+    <div class="topnav-right">
+      <a href="login.html">Log In</a>
+      <a href="owner_register.html" style="border-right: none">Sign Up</a>
+    </div>
+  </div>
+
+  <br>
+  <br>
+   
+<div style="display: flex; align-items: center; justify-content: center;">
+    <img src="images/Hosteler's Hive Logo.png" alt="Description of the image" style="width: 80px; height: auto; margin: 0;">
+  <div style="margin-left: 10px; line-height: 1;">
+    <div style="text-align: left; font-size: 30px;color: #333; text-transform: uppercase">
+      <span style="color: red;">H</span>osteler's
+    </div>
+    <div style="text-align: left; font-size: 30px;color: #333; text-transform: uppercase">
+        <span style="color: orangered;">H</span>ive<sup style="font-size: 15px;"> &copy;</sup>
+    </div>
+  </div>
+</div>
+  
+  </br>
+  <form action="User_Hostel_Requirement_Checker" method="post">
+    <table class="inputtable">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="color: white;">Select Your State/UT: </td>
+        <td  style="color: white;"><label class="midcolumn">Enter Your City : </label></td>
+        <td  style="color: white;">Enter Area Pin Code: </td>
+      </tr>
+      <tr>
+       <td>
+           <select style="width: 250px;color: white;" name="inputstate" id="inputstate" required="required">
+               <option value=""  selected disabled >--Select--</option>
+    <option style="color: black;" value="Andhra Pradesh">Andhra Pradesh</option>
+    <option style="color: black;" value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option style="color: black;" value="Assam">Assam</option>
+    <option style="color: black;" value="Bihar">Bihar</option>
+    <option style="color: black;" value="Chhattisgarh">Chhattisgarh</option>
+    <option style="color: black;" value="Goa">Goa</option>
+    <option style="color: black;" value="Gujarat">Gujarat</option>
+    <option style="color: black;" value="Haryana">Haryana</option>
+    <option style="color: black;" value="Himachal Pradesh">Himachal Pradesh</option>
+    <option style="color: black;" value="Jharkhand">Jharkhand</option>
+    <option style="color: black;" value="Karnataka">Karnataka</option>
+    <option style="color: black;" value="Kerala">Kerala</option>
+    <option style="color: black;" value="Madhya Pradesh">Madhya Pradesh</option>
+    <option style="color: black;" value="Maharashtra">Maharashtra</option>
+    <option style="color: black;" value="Manipur">Manipur</option>
+    <option style="color: black;" value="Meghalaya">Meghalaya</option>
+    <option style="color: black;" value="Mizoram">Mizoram</option>
+    <option style="color: black;" value="Nagaland">Nagaland</option>
+    <option style="color: black;" value="Odisha">Odisha</option>
+    <option style="color: black;" value="Punjab">Punjab</option>
+    <option style="color: black;" value="Rajasthan">Rajasthan</option>
+    <option style="color: black;" value="Sikkim">Sikkim</option>
+    <option style="color: black;" value="Tamil Nadu">Tamil Nadu</option>
+    <option style="color: black;" value="Telangana">Telangana</option>
+    <option style="color: black;" value="Tripura">Tripura</option>
+    <option style="color: black;" value="Uttar Pradesh">Uttar Pradesh</option>
+    <option style="color: black;" value="Uttarakhand">Uttarakhand</option>
+    <option style="color: black;" value="West Bengal">West Bengal</option>
+    <option style="color: black;" value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option style="color: black;" value="Chandigarh">Chandigarh</option>
+    <option style="color: black;" value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+    <option style="color: black;" value="Delhi">Delhi</option>
+    <option style="color: black;" value="Lakshadweep">Lakshadweep</option>
+    <option style="color: black;" value="Puducherry">Puducherry</option>
+    <option style="color: black;" value="Ladakh">Ladakh</option>
+    <option style="color: black;" value="Jammu and Kashmir">Jammu and Kashmir</option>
+</select>
+
+        </td>
+        <td><label class="midcolumn"><input type="text" name="inputcity" placeholder="Required" required="required"></label></td>
+        <td><input type="text" name="inputpincode" placeholder="If available"></td>
+      </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      <tr>
+          <td style="color: white;">Select Hostel Type: </td>
+        <td style="color: white;"><label class="midcolumn">Select Annual Rent:</label></td>
+        <td style="color: white;">Select Required Amenities: </td>
+      </tr>
+      <tr>
+        <td class="top-align">
+          <label style="font-size: 18px; color:white;" class="radio-label">
+            <input type="radio" name="inputhosteltype" value="Boys">
+            <span class="custom-radio"></span> Boys
+          </label><br>
+          <label style="font-size: 18px; color:white;" class="radio-label">
+            <input type="radio" name="inputhosteltype" value="Girls">
+            <span class="custom-radio"></span> Girls
+          </label><br>
+          <label style="font-size: 18px; color:white;" class="radio-label">
+            <input type="radio" name="inputhosteltype" value="Both">
+            <span class="custom-radio"></span> Both
+          </label>
+        </td>
+        <td class="top-align" ><label class="midcolumn">
+            <select name="inputannualrent" style="color: white;width: 250px" id="inputannualrent">
+            <option style="color: black;" value="" selected disabled>--Select--</option>
+            <option style="color: black;" value="rent1">25000-35000</option>
+            <option style="color: black;" value="rent2">35000-45000</option>
+            <option style="color: black;" value="rent3">45000-55000</option>
+            <option style="color: black;" value="rent4">55000-65000</option>
+            <option style="color: black;" value="rent5">65000+</option>
+            </select></label>>
+        </td>
+        <td class="left-align">
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputairconditioner" name="inputairconditioner" value="Air Conditioner">
+            <span class="custom-checkbox"></span> Air Conditioner
+          </label><br>
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputmess" name="inputmess" value="Mess">
+            <span class="custom-checkbox"></span> Mess
+          </label><br>
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputwifi" name="inputwifi" value="Wifi">
+            <span class="custom-checkbox"></span> Wifi
+          </label><br>
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputkitchen" name="inputkitchen" value="Kitchen">
+            <span class="custom-checkbox"></span> Kitchen
+          </label><br>
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputlocker" name="inputlocker" value="Locker">
+            <span class="custom-checkbox"></span> Lockers
+          </label><br>
+          <label style="color: white;" class="checkbox-label">
+            <input type="checkbox" id="inputlaundry" name="inputlaundry" value="Laundry">
+            <span class="custom-checkbox"></span> Laundry
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="color: white;"><label class="midcolumn">Any Extra Amenity:</label></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><label class="midcolumn"><input type="text" name="inputextraamenity" placeholder="If required"></label></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="reset" value="Reset"></td>
+        <td></td>
+        <td><input type="submit" value="Search"></td>
+      </tr><tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+  <br><br><br>
+  <div class="footer">
+    <p>@Author : Atharva Bagdare</p>
+  </div>
+</body>
+
+</html>

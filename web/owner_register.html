@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       /* Add a black background color to the top navigation */
+    .topnav {
+      border-collapse: collapse;
+      background-color: transparent;
+      overflow: hidden;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      background-color: orangered;
+      color: white;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #333;
+      color: white;
+    }
+
+    .topnav a.active:hover {
+      background-color: red;
+      color: #333;
+    }
+
+    .topnav-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+      color: black;
+      text-align: left;
+      padding: 10px;
+      border-collapse: collapse;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    body {
+       /*background-image: url('https://assets.hongkiat.com/uploads/minimalist-dekstop-wallpapers/4k/original/12.jpg?3');*/
+        background-image: url('https://static.vecteezy.com/system/resources/previews/022/737/904/original/modern-city-scape-silhouette-simple-minimalist-blue-city-skyline-background-urban-cityscape-silhouettes-illustration-vector.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-color: #506c9c; /* Fallback color if the image doesn't cover the whole area */
+        background-attachment: fixed;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 40px;
+      font-family: sans-serif;
+      margin-top: 10px;
+    }
+
+.User-Register{
+  position: absolute;
+  padding: 10px;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+}
+
+h2{
+    margin-top: 40px; 
+  font-size: 25px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align:center;
+  color: red;
+}
+
+h4{
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align:center;
+}
+
+.table1 td{
+  padding:10px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+.table1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table1 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    opacity: 0.8;
+    width: 35%;
+    border-radius: 25px;
+    border-collapse: collapse;
+}
+.table1 input{
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  text-align: center;
+  width: 200px;
+}
+
+
+input[type=submit]{
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  float: right;
+}
+
+input[type=reset] {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  float: left;
+}
+
+input[type=reset]:hover,
+input[type=submit]:hover{
+    color: red;
+    border: 2px solid red;
+}
+
+input[type=date]
+{
+  padding: 4px 30px;
+  border-radius: 20px;
+  border: 1px solid white;
+  color: white;
+  width: 150px;
+}
+
+.table1 select
+{
+    padding: 5px 35px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: transparent;
+    
+}
+
+ /* Hide the default radio button */
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="checkbox"]
+    {
+        display: none;
+    }
+
+    /* Create a custom radio button */
+    .custom-radio {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      /* Unchecked background color */
+      border-radius: 50%;
+      border: 1px solid white;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Style the checked state */
+    input[type="radio"]:checked+.custom-radio {
+      background-color: orangered;
+      /* Checked background color */
+    }
+
+    /* Create the dot for the checked state */
+    .custom-radio::after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease;
+    }
+
+    /* Show the dot when checked */
+    input[type="radio"]:checked+.custom-radio::after {
+      transform: translate(-50%, -50%) scale(1);
+      background-color: white;
+      /* Color of the dot */
+    }
+
+    .radio-label {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    /* Create a custom checkbox */
+    .custom-checkbox {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #FCF6F5;
+      /* Unchecked background color */
+      border-radius: 3px;
+      border: 2px solid #333;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Style the checked state */
+    input[type="checkbox"]:checked+.custom-checkbox {
+      background-color: orangered;
+      /* Checked background color */
+    }
+
+    /* Create the checkmark for the checked state */
+    .custom-checkbox::after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 10px;
+      border: solid #333;
+      border-width: 0 2px 2px 0;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+      transition: transform 0.5s ease;
+    }
+
+    /* Show the checkmark when checked */
+    input[type="checkbox"]:checked+.custom-checkbox::after {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    .radio-label,
+    .checkbox-label {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    .pagetitle{
+        color: red;
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .note{
+        font-size: 20px;
+        text-align: center;
+    }
+     </style>
+  <title>Hostel Finder | User Register</title>
+        <link rel="icon" type="image/png" href="images/Hosteler's Hive Logo.png">
+</head>
+
+<body>
+
+<div class="topnav">
+  <a class="active" href="home.html">Home</a>
+   <div class="topnav-right">
+      <a href="login.html">Log In</a>
+   </div>
+</div> 
+</BR>
+ 
+<div style="display: flex; align-items: center; justify-content: center;">
+  <img src="images/Hosteler's Hive Logo.png" alt="Description of the image" style="width: 80px; height: auto; margin: 0;">
+  <div style="margin-left: 10px; line-height: 1;">
+    <div style="text-align: left; font-size: 30px;color: #333; text-transform: uppercase">
+      <span style="color: red;">H</span>osteler's
+    </div>
+    <div style="text-align: left; font-size: 30px;color: #333; text-transform: uppercase">
+      <span style="color: orangered;">H</span>ive<sup style="font-size: 15px;"> &copy;</sup>
+    </div>
+  </div>
+</div>
+  
+
+</BR>
+<p class="pagetitle">Owner Registration Form</p></BR>
+
+ <p class="note">(After completing registration, please remember your Owner ID from Home Page)</p>
+    </BR>  
+    <form action="Owner_Registration_Checker" method="post">     
+      
+      <table class="table1">
+     <tr>
+         <td>
+         </td>
+     </tr>
+      <tr>
+          <td>Enter your name: </td>
+          <td><input type="text" name="owner_name"required></td>
+      </tr>
+      <tr>
+          <td>Contact Number: </td>
+          <td><input type="tel" name="owner_contact"  pattern="[0-9]{10}" required=""></td>
+      </tr>
+      <tr>
+          <td>Email id: </td>
+          <td><input type="email" name="owner_email" id="owner_email" required></td>
+      </tr>
+      <tr>
+          <td>Date of Birth: </td>
+          <td><input type="date" name="owner_dob" id="owner_dob"></td>
+      </tr>
+      <tr>
+          <td>Gender: </td>
+            <td class="top-align">
+          <label style="font-size: 20px;" class="radio-label">
+            <input type="radio" name="owner_gender" value="Male">
+            <span class="custom-radio"></span> Male
+          </label>
+          <label style="font-size: 20px; margin-left: 60px" class="radio-label">
+            <input type="radio" name="owner_gender" value="Female">
+            <span class="custom-radio"></span> Female
+          </label><br>
+        </td>
+      </tr>
+      <tr>
+          <td>Address: </td>
+          <td><input type="text" name="owner_address" id="owner_address"></td>
+      </tr>
+      <tr>
+          <td>City: </td>
+          <td><input type="text" name="owner_city" id="owner_city" required></td>
+      </tr>
+      <tr>
+          <td>State: </td>
+          <td>
+              <select style="width: 210px; color: white;" name="owner_state" id="owner_state" required>
+               <option value=""  selected disabled>--Select--</option>
+    <option style="color: black;" value="Andhra Pradesh">Andhra Pradesh</option>
+    <option style="color: black;" value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option style="color: black;" value="Assam">Assam</option>
+    <option style="color: black;" value="Bihar">Bihar</option>
+    <option style="color: black;" value="Chhattisgarh">Chhattisgarh</option>
+    <option style="color: black;" value="Goa">Goa</option>
+    <option style="color: black;" value="Gujarat">Gujarat</option>
+    <option style="color: black;" value="Haryana">Haryana</option>
+    <option style="color: black;" value="Himachal Pradesh">Himachal Pradesh</option>
+    <option style="color: black;" value="Jharkhand">Jharkhand</option>
+    <option style="color: black;" value="Karnataka">Karnataka</option>
+    <option style="color: black;" value="Kerala">Kerala</option>
+    <option style="color: black;" value="Madhya Pradesh">Madhya Pradesh</option>
+    <option style="color: black;" value="Maharashtra">Maharashtra</option>
+    <option style="color: black;" value="Manipur">Manipur</option>
+    <option style="color: black;" value="Meghalaya">Meghalaya</option>
+    <option style="color: black;" value="Mizoram">Mizoram</option>
+    <option style="color: black;" value="Nagaland">Nagaland</option>
+    <option style="color: black;" value="Odisha">Odisha</option>
+    <option style="color: black;" value="Punjab">Punjab</option>
+    <option style="color: black;" value="Rajasthan">Rajasthan</option>
+    <option style="color: black;" value="Sikkim">Sikkim</option>
+    <option style="color: black;" value="Tamil Nadu">Tamil Nadu</option>
+    <option style="color: black;" value="Telangana">Telangana</option>
+    <option style="color: black;" value="Tripura">Tripura</option>
+    <option style="color: black;" value="Uttar Pradesh">Uttar Pradesh</option>
+    <option style="color: black;" value="Uttarakhand">Uttarakhand</option>
+    <option style="color: black;" value="West Bengal">West Bengal</option>
+    <option style="color: black;" value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option style="color: black;" value="Chandigarh">Chandigarh</option>
+    <option style="color: black;" value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+    <option style="color: black;" value="Delhi">Delhi</option>
+    <option style="color: black;" value="Lakshadweep">Lakshadweep</option>
+    <option style="color: black;" value="Puducherry">Puducherry</option>
+    <option style="color: black;" value="Ladakh">Ladakh</option>
+    <option style="color: black;" value="Jammu and Kashmir">Jammu and Kashmir</option>
+</select>
+              
+          </td>
+      </tr>
+      <tr>
+          <td>Set password: </td>
+          <td><input type="password" name="owner_password" id="owner_password" required></td>
+      </tr>
+      <tr>
+          <td>Confirm password: </td>
+          <td><input type="password" name="owner_confirm_password" id="owner_confirm_password" required></td>
+      </tr>
+      <tr>
+          <td><input type="reset"></td>
+         <td><input type="submit" value="Register"></td>
+      </tr>
+        <tr>
+        <td  colspan="2" style="text-align: center; font-size: 14px;">Already having an account? <a href="login.html" style="color: white;"><Strong>Login</Strong></a></td>
+    </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+      </table>
+      </form>
+       </BR>
+       </BR>
+       <div class="footer">
+           <p style="text-align: right; bottom: 0; position: fixed">@Author: Atharva Bagdare</p>
+        </div>
+</body>
+</html>

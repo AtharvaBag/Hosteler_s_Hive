@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Boxes Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #FCF6F5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+    color: #333;
+    background-color: transparent;
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 5px;
+}
+
+.box p {
+    margin-bottom: 0;
+}
+
+.off-white {
+    background-color: #FCF6F5;
+}
+
+ /* Hide the default radio button */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Create a custom radio button */
+        .custom-radio {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #FCF6F5; /* Unchecked background color */
+            border-radius: 50%;
+            border: 2px solid #333;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Style the checked state */
+        input[type="radio"]:checked + .custom-radio {
+            background-color: orangered; /* Checked background color */
+        }
+
+        /* Create the dot for the checked state */
+        .custom-radio::after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: #FCF6F5;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.2s ease;
+        }
+
+        /* Show the dot when checked */
+        input[type="radio"]:checked + .custom-radio::after {
+            transform: translate(-50%, -50%) scale(1);
+            background-color: #333; /* Color of the dot */
+        }
+        p{
+            font-family: "Arial", "Helvetica", sans-serif;
+        }
+
+        </style>
+          <title>Sample</title>
+    
+     <link rel="icon" type="image/png" href="images/Hosteler's Hive Logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="box off-white">
+            <h2>Box 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis eros.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 2</h2>
+            <p>Phasellus gravida lacus in lorem ultricies, vel laoreet felis vehicula.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 3</h2>
+            <p>Nulla convallis orci id ligula pellentesque, at scelerisque libero rutrum.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 4</h2>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 5</h2>
+            <p>Quisque dapibus nisl sed justo condimentum, ac volutpat felis pulvinar.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 6</h2>
+            <p>Integer eget nisi auctor, maximus ligula sit amet, vehicula sem.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 7</h2>
+            <p>Fusce euismod mauris ac risus luctus, id interdum odio ultricies.</p>
+        </div>
+        <div class="box off-white">
+            <h2>Box 8</h2>
+            <p>Donec vel tortor et nunc finibus rhoncus. Morbi non lorem fringilla.</p>
+        </div>
+    </div>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Table Cells</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Row 1 and 2, Cell 1 Merged</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+            <td>Row 1, Cell 4</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+            <td>Row 2, Cell 4</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Table Cells</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td colspan="2">Row 1, Cell 2 and 3 Merged</td>
+            <td>Row 1, Cell 4</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+            <td>Row 2, Cell 4</td>
+        </tr>
+    </table>
+    <p style="font-size: 30px; font-family: Arial, Gill Sans, sans-serif;">Sample text 1</p>
+     <p style="font-size: 30px; font-family: Courier New, Courier, monospace;">Sample text 2</p>
+      <p style="font-size: 30px; font-family: Brush Script MT, cursive;">Sample text 3</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <style>
+        .radio-wrapper {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Hide the default radio button */
+        .radio-wrapper input[type="radio"] {
+            display: none;
+        }
+
+        /* Create a custom radio button */
+        .custom-radio {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            height: 10px;
+            width: 10px;
+            background-color: black;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+
+        /* Style for checked and disabled state */
+        input[type="radio"]:checked + .custom-radio {
+            background-color: orangered; /* Change this color as needed */
+            border-color: black;
+        }
+
+        input[type="radio"]:disabled + .custom-radio {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+
+        input[type="radio"]:checked:disabled + .custom-radio {
+            background-color: orangered; /* Change this color as needed */
+            border-color: black;
+            opacity: 0.8;
+        }
+        
+        /* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 15px; /* Width of the entire scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: black;
+    opacity: 0.8;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: orangered; /* Color of the scroll thumb */
+    border-radius: 10px; /* Rounded corners of the scroll thumb */
+    border: 2px solid #333; /* Border around the scroll thumb */
+    width: 18px;
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+    border: 3px solid #333;
+}
+    </style>
+  
+</head>
+<body>
+    <label class="radio-wrapper">
+        <input type="radio" checked disabled>
+        <span class="custom-radio"></span>
+        Option 1
+    </label>
+    
+<div style="display: flex; align-items: center; justify-content: center;">
+  <img src="images/Hosteler's Hive Logo.png" alt="Description of the image" style="width: 120px; height: auto; margin: 0;">
+  <div style="margin-left: 10px; line-height: 1;">
+    <div style="text-align: left; font-size: 40px;color: #333; text-transform: uppercase">
+      <span style="color: red;">H</span>osteler's
+    </div>
+    <div style="text-align: left; font-size: 40px;color: #333; text-transform: uppercase">
+      <span style="color: orangered;">H</span>ive
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+    
+</body>
+</html>
